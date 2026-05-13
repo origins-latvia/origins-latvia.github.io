@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter One: 1943</title>
+    <link rel="icon" type="image/png" href="graphics/auseklis.png">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            max-width: 900px; /* Slightly wider to accommodate the two-column layout */
+            margin: 40px auto; 
+            padding: 20px; 
+            color: #2d2d2d; 
+            background-color: #fdfaf3; 
+        }
+
+        h1, h2 { color: #5d4037; }
+
+        /* The Divider */
+        .divider {
+            display: block;
+            margin: 40px auto;
+            width: 50px;
+            height: auto;
+        }
+
+        /* Diary Grid System */
+        .diary-container {
+            display: grid;
+            /* Column 1 (Scan) is now 0.7 parts, Column 2 (Text) is 1.3 parts */
+            /* This effectively reduces the scan width by 30% compared to the text */
+            grid-template-columns: 0.7fr 1.3fr; 
+            gap: 30px;
+            margin: 40px 0;
+            border: 1px solid #e0d9c5;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            align-items: start; /* Keeps the text and image aligned at the top */
+        }
+
+        /* Row 1, Column 1: The Scan */
+        .diary-scan-box {
+            position: relative;
+            grid-column: 1 / 2;
+        }
+
+        .diary-scan-box img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            display: block;
+        }
+
+        .expand-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #5d4037;
+            text-decoration: none;
+        }
+
+        /* Row 1, Column 2: Latvian Transcription */
+        .diary-latvian {
+            grid-column: 2 / 3;
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            font-size: 1.05em;
+            color: #1c39bb; /* This is a deep Midnight Blue */
+            line-height: 1.7;
+        }
+
+        /* Row 2: English Translation */
+        .diary-english {
+            grid-column: 1 / 3; /* Spans both columns */
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+
+
+        /* Responsive adjustment for mobile phones */
+        @media (max-width: 600px) {
+            .diary-container {
+                grid-template-columns: 1fr;
+            }
+            .diary-scan-box, .diary-latvian, .diary-english {
+                grid-column: 1 / 2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chapter One</h1>
+        <h2>1943: The Formation of 319-F. Schutzmannschaft Battalion</h2>
+    </header>
+
+    <!-- BEGIN DIARY BLOCK -->
+    <section class="diary-container">
+        
+        <!-- Top Left: Scan -->
+        <div class="diary-scan-box">
+            <a href="graphics/D.43.1.jpg" target="_blank" class="expand-icon">VIEW FULL SIZE</a>
+            <img src="graphics/D.43.1.jpg" alt="Diary Page Scan">
+        </div>
+
+        <!-- Top Right: Latvian -->
+        <div class="diary-latvian">
+            
+            <p>
+                1943. 22 okt. 	Agri no rīta par tāļruni Ezergailis paziņo ka 23 okt pulkst. 13:00 jabūt Cēsis pie komisijas. Šis nāca man kā zibeņa spēriens. Kur tūdaļ devos uz mājam abi ar sieviņu.</p>
+
+             <p>   23 okt. 	No rīta agri biju jau augšā un vārtijos par gultu un domāju kad vēl gulēšu šai vietā. Un vai maz vairs kādu reiz. Pēc kam sieviņu cēļu augšā kuŗa asaras grimdama gatavoja man ceļa somu. Sapulcēšās (sic) uz braukšanu bija pulkst. 10:00 pagasta namā. Pirmo reizi komisija mani nenozīmēja. Bet gan bija nozīmēts [Oskars] Zosuls, bet K[ārlis] Ezergailis šo lietu sagrozija tā kā man bija jaiet.
+            </p>
+
+            <p>24 okt. 	Aizbraucam uz Rīgu pēc pusdienā.</p>
+        </div>
+
+        <!-- Bottom: English -->
+        <div class="diary-english">
+            
+            <p>
+                22 Oct --  Early in the morning Ezergailis informed me by phone that on 23rd Oct at 13:00 I had to be at the Commission in Cēsis. This struck me like a bolt of lightening. I went home immediately with my wife. </p>
+
+                <p>
+                23 Oct --  I woke early and tossed around in bed wondering when I would again sleep in this place. Whether I would at all. Later I woke my wife who, weighed down by tears, packed my bag. Muster for the trip [to Cēsis] was at the district hall at 10:00. The first time around the Commission hadn't selected me for call up. Rather [Oskars] Zosuls was was selected, however K[ārlis] Ezergailis changed things so that I had to go.
+
+            </p>
+            <p>24 Oct -- In the afternoon we travel to Rīga.</p>
+        </div>
+
+    </section>
+    <!-- END DIARY BLOCK -->
+
+    <p>Following this entry, the battalion moved toward their next assignment...</p>
+
+    <footer>
+        <hr>
+        <p><a href="index.html">Return to Preface</a></p>
+    </footer>
+
+</body>
+</html>
