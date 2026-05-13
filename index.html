@@ -10,24 +10,37 @@
         blockquote { background: #f9f9f9; border-left: 10px solid #ccc; margin: 1.5em 10px; padding: 0.5em 10px; font-style: italic; }
         cite { display: block; font-size: 0.9em; margin-top: 10px; color: #666; }
         
-        /* Centering styles for the image and caption */
-        .center-figure {
-            display: block;
-            margin: 30px auto;
-            text-align: center;
-        }
-        .center-figure img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px auto;
-        }
-        .center-figure figcaption {
-            font-weight: normal;
-            color: #555; /* Slightly lighter gray to further distinguish it from body text */
-            font-size: 0.85em; /* This makes the font smaller */
-            margin-top: 8px;
-        }
+       /* This part handles the general centering container */
+.center-figure {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* This part handles the photo of Jānis specifically */
+.center-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* This part handles the video of Adolfs specifically */
+.center-figure video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    border: 1px solid #ccc;
+}
+
+/* This part handles the captions for both */
+.center-figure figcaption {
+    font-weight: normal;
+    color: #555;
+    font-size: 0.85em;
+    margin-top: 8px;
+}
 
         .meta-text { font-size: 0.95em; color: #555; border-top: 1px solid #eee; padding-top: 20px; }
         .station-monument { font-style: italic; color: #777; font-size: 0.9em; }
@@ -105,10 +118,22 @@
         </article>
     </section>
 
-    <section class="meta-text">
+   <section class="meta-text">
         <p>When it was all over with millions dead for no reason as usual, Hitler died a cowards death by suicide on 30 April, 1945 and his co-conspirator Stalin acclaimed himself the saviour of Europe and lived on to murder even more people until eventually meeting his maker in Hell on 5 March, 1953.</p>
-        <p><strong>Jānis Avens’ life was to take an unimaginable change of course on 22 October, 1943.</strong></p>
-        <p>My Father’s cousin Adolfs in 2008 relates how they were separated by WWII and reunited 40 years later when he and his wife visited Australia.</p>
+        
+        <!-- Centered Transition Sentence -->
+        <p style="text-align: center; margin: 40px 0; display: block; width: 100%;">
+    <strong>Jānis Avens’ life was to take an unimaginable change of course on 22 October, 1943.</strong>
+</p>
+
+        <!-- Centered Video and Caption -->
+        <figure class="center-figure">
+            <video controls>
+                <source src="video/adolfs 2008.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>My Father’s cousin Adolfs in 2008 relates how they were separated by WWII and reunited 40 years later when he and his wife visited Australia.</figcaption>
+        </figure>
     </section>
 
 </body>
