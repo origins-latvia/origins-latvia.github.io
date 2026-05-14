@@ -95,21 +95,40 @@
                 grid-column: 1 / 2;
             }
         }
+               /* This part handles the general centering container */
+.center-figure {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* This part handles the captions for both */
+.center-figure figcaption {
+    font-weight: normal;
+    color: #555;
+    font-size: 0.85em;
+    margin-top: 8px;
+}
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Chapter One</h1>
-        <h2>1943: The Formation of 319-F. Schutzmannschaft Battalion</h2>
+        <h1>Chapter One: 1943</h1>
+       
     </header>
+ <!-- Centered Graphic and Caption -->
+            <figure class="center-figure">
+                <img src="graphics/players.jpg" alt="Dramatis Personae">
+                <figcaption>Dramatis Personae: Kosa Self Defence Group Oct 1941 (1)</figcaption>
+            </figure>
 
     <!-- BEGIN DIARY BLOCK -->
     <section class="diary-container">
         
         <!-- Top Left: Scan -->
         <div class="diary-scan-box">
-            <a href="graphics/D.43.1.jpg" target="_blank" class="expand-icon">VIEW FULL SIZE</a>
+            <a href="graphics/D.43.1.jpg" target="_blank" class="expand-icon">View full size</a>
             <img src="graphics/D.43.1.jpg" alt="Diary Page Scan">
         </div>
 
