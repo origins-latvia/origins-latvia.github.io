@@ -91,7 +91,19 @@
             margin-top: 10px;
             text-align: left; /* Explicitly left-align */
         }
+        
+/* Ensure images and captions inside centered figures are responsive */
+.center-figure img {
+    max-width: 100%;    /* Image will shrink to fit container width */
+    height: auto;       /* Maintain the image's original aspect ratio */
+    display: block;      /* Prevent small spacing gaps at the bottom */
+    margin: 0 auto;      /* Keep the image horizontally centered */
+}
 
+.center-figure figcaption {
+    width: 100%;        /* Caption text must stay within the phone screen */
+    box-sizing: border-box; /* Ensure padding doesn't push caption off-screen */
+}
 
         /* Responsive adjustment for mobile phones */
         @media (max-width: 600px) {
