@@ -82,7 +82,41 @@ cite {
             height: auto;
             opacity: 0.8;      /* Makes it slightly subtle; remove if you want full brightness */
         }
+/* Container to hold video and hint */
+.video-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
 
+/* The prompt text */
+.video-hint {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(2, 48, 71, 0.7); /* Persian Blue with transparency */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    pointer-events: none; /* Allows clicks to go through to the video */
+    transition: opacity 0.3s ease;
+}
+
+/* Hide the hint when hovering over the container */
+.video-container:hover .video-hint {
+    opacity: 0;
+}
+
+/* Your existing hover code for the control bar */
+video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.video-container:hover video::-webkit-media-controls {
+    opacity: 1;
+}
         
       
     </style>
@@ -203,13 +237,16 @@ cite {
 </p>
 
         <!-- Centered Video and Caption -->
-        <figure class="center-figure">
-            <video controls>
-                <source src="video/adolfs 2008.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <figcaption>My Father’s cousin Adolfs in 2008 relates how he and Jānis were both conscripted and then separated by WWII to be reunited 40 years later when he and his wife visited Australia.</figcaption>
-        </figure>
+<figure class="center-figure">
+    <div class="video-container">
+        <video controls>
+            <source src="video/adolfs_2008.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-hint">Hover for controls</div>
+    </div>
+    <figcaption>My Father’s cousin Adolfs in 2008 relates how he and Jānis were both conscripted in October 1943. Separated by WWII they would be reunited 40 years later when he and his wife visited Australia.</figcaption>
+</figure>
     </section>
 <p><a href="chapter1.html">Proceed to Chapter One: 1943</a></p>
 </body>
