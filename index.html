@@ -118,7 +118,56 @@ video::-webkit-media-controls {
     opacity: 1;
 }
         
-      
+/* Container that holds both the image and the map */
+.prologue-media-row {
+    display: flex;
+    gap: 20px;          /* Space between the image and the map */
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* Individual boxes for the image and map */
+.prologue-media-row .media-box {
+    flex: 1;            /* Forces both boxes to take up equal width */
+    margin: 0;          /* Resets default figure margins */
+    text-align: center;
+}
+
+/* Ensure the image scales smoothly */
+.prologue-media-row .media-box img {
+    width: 100%;
+    height: 300px;      /* Matches the height of the map iframe */
+    object-fit: cover;  /* Crops the image cleanly to fill the space without distorting */
+    border-radius: 4px;
+}
+
+/* Ensure the iframe scales smoothly and fix the baseline gap */
+.prologue-media-row .media-box iframe {
+    width: 100%;        /* Ensures full responsiveness within its column */
+    border-radius: 4px;
+    display: block;     /* Changes from inline to block to align caption perfectly */
+}
+
+/* Format the captions to perfectly match graphics/janis.jpg */
+.prologue-media-row .media-box figcaption {
+    font-family: inherit;      /* Inherits your project's book/journal typography */
+    font-size: 0.9em;          /* Matches standard caption scaling */
+    color: #555;               /* Matches the caption text color */
+    text-align: center;        /* Centers text identically to janis.jpg */
+    margin-top: 10px;          /* Clean spacing below the media element */
+    padding: 0 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .prologue-media-row {
+        flex-direction: column; /* Stacks the image on top of the map on small screens */
+    }
+    
+    .prologue-media-row .media-box img {
+        height: auto; /* Lets the image return to natural proportions on mobile */
+    }
+}    
     </style>
 </head>
 
@@ -150,6 +199,28 @@ video::-webkit-media-controls {
 
     <section id="Prologue">
         <h2>Prologue</h2>
+
+        <article>
+            <p>
+                Jānis Avens, son of Jānis (b.1875) and Emīlija Gaigale was born in Kosa, Latvija in 1914. Kosa is barely a speck on the map about 100km from Rīga and an hour by foot from the parish centre Skujene. It is 33km from the Provincial capital Cēsis.</p> 
+            <p>
+    Their house was called Skuķi and it was from that that Dad's Grandmother Emelīne Šarlote (n. Bernharde) got her nickname: Skuķu Māte (the old lady from Skuķi).
+</p>
+
+<!-- Side-by-Side Media Container -->
+<div class="prologue-media-row">
+    <figure class="media-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8896.311272585583!2d25.410851240158067!3d57.09210171442225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e965b63cb9ece9%3A0x60ee3b0bc6126b2c!2sKosa%2C%20Skujene%20parish%2C%20C%C4%93sis%20Municipality%2C%20LV-4143%2C%20Latvia!5e1!3m2!1sen!2sau!4v1778891027236!5m2!1sen!2sau" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figcaption>Location of Kosa, Latvia.</figcaption>
+    </figure>
+
+    <figure class="media-box">
+        <img src="graphics/skuķi.jpg" alt="Skuķi homestead">
+        <figcaption>The Skuķi homestead in Kosa.</figcaption>
+    </figure>
+    
+</div>
+        </article>
 
         <article>
             <h3>Molotov–Ribbentrop Pact</h3>
