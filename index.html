@@ -7,183 +7,163 @@
     <title>Origins: There and Back Again</title>  
     <style>
         body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    line-height: 1.6; 
-    max-width: 800px; 
-    margin: 40px auto; 
-    padding: 20px; 
-    color: #2d2d2d;            /* Slightly softer than #333 */
-    background-color: #fdfaf3; /* The new paper-like background */
-}
-
-h1, h2, h3 { 
-    color: #5d4037;            /* The new earthy brown */
-}
-
-blockquote { 
-    background: #f4efdf;       /* A darker cream for contrast */
-    border-left: 10px solid #5d4037; 
-    margin: 1.5em 10px; 
-    padding: 0.5em 10px; 
-    font-style: italic; 
-    color: #7d6b5d;            /* Muted text for the diary entries */
-}
-
-cite { 
-    display: block; 
-    font-size: 0.9em; 
-    margin-top: 10px; 
-    color: #666; 
-}
-        
-       /* This part handles the general centering container */
-.center-figure {
-    display: block;
-    margin: 30px auto;
-    text-align: center;
-}
-
-/* This part handles the photo of Jānis specifically */
-.center-figure img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-/* This part handles the video of Adolfs specifically */
-.center-figure video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-    border: 1px solid #ccc;
-}
-
-/* This part handles the captions for both */
-.center-figure figcaption {
-    font-weight: normal;
-    color: #555;
-    font-size: 0.85em;
-    margin-top: 8px;
-}
-
-.meta-text { 
-    font-size: 0.95em; 
-    color: #555; 
-    padding-top: 0;   /* Removed the extra padding */
-    margin-top: 10px; /* Provides just a small, controlled gap */
-}
-
-.divider {
-            display: block;
-            margin: 5px auto; /* Spacing: 40px top/bottom, auto centers it */
-            width: 50px;       /* Adjust this number to make the symbol larger or smaller */
-            height: auto;
-            opacity: 0.8;      /* Makes it slightly subtle; remove if you want full brightness */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            color: #2d2d2d;            
+            background-color: #fdfaf3; 
         }
-/* Container to hold video and hint */
-.video-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
 
-/* The prompt text */
-.video-hint {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(2, 48, 71, 0.7); /* Persian Blue with transparency */
-    color: white;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    pointer-events: none; /* Allows clicks to go through to the video */
-    transition: opacity 0.3s ease;
-}
+        h1, h2, h3, h4 { 
+            color: #5d4037;            
+        }
 
-/* Hide the hint when hovering over the container */
-.video-container:hover .video-hint {
-    opacity: 0;
-}
+        blockquote { 
+            background: #f4efdf;       
+            border-left: 10px solid #5d4037; 
+            margin: 1.5em 10px; 
+            padding: 0.5em 10px; 
+            font-style: italic; 
+            color: #7d6b5d;            
+        }
 
-/* Your existing hover code for the control bar */
-video::-webkit-media-controls {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.video-container:hover video::-webkit-media-controls {
-    opacity: 1;
-}
+        cite { 
+            display: block; 
+            font-size: 0.9em; 
+            margin-top: 10px; 
+            color: #666; 
+        }
         
-/* Container that holds both the image and the map */
-.prologue-media-row {
-    display: flex;
-    gap: 20px;          /* Space between the image and the map */
-    margin: 30px 0;
-    width: 100%;
-}
+        .center-figure {
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+        }
 
-/* Individual boxes for the image and map */
-.prologue-media-row .media-box {
-    flex: 1;            /* Forces both boxes to take up equal width */
-    margin: 0;          /* Resets default figure margins */
-    text-align: center;
-}
+        .center-figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
 
-/* Ensure the image scales smoothly */
-.prologue-media-row .media-box img {
-    width: 100%;
-    height: 300px;      /* Matches the height of the map iframe */
-    object-fit: cover;  /* Crops the image cleanly to fill the space without distorting */
-    border-radius: 4px;
-}
+        .center-figure video {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
 
-/* Ensure the iframe scales smoothly and fix the baseline gap */
-.prologue-media-row .media-box iframe {
-    width: 100%;        /* Ensures full responsiveness within its column */
-    border-radius: 4px;
-    display: block;     /* Changes from inline to block to align caption perfectly */
-}
+        .center-figure figcaption {
+            font-weight: normal;
+            color: #555;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
 
-/* Format the captions to perfectly match graphics/janis.jpg */
-.prologue-media-row .media-box figcaption {
-    font-family: inherit;      /* Inherits your project's book/journal typography */
-    font-size: 0.9em;          /* Matches standard caption scaling */
-    color: #555;               /* Matches the caption text color */
-    text-align: center;        /* Centers text identically to janis.jpg */
-    margin-top: 10px;          /* Clean spacing below the media element */
-    padding: 0 5px;
-}
+        .meta-text { 
+            font-size: 0.95em; 
+            color: #555; 
+            margin-top: 10px; 
+        }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .prologue-media-row {
-        flex-direction: column; /* Stacks the image on top of the map on small screens */
-    }
-    
-    .prologue-media-row .media-box img {
-        height: auto; /* Lets the image return to natural proportions on mobile */
-    }
-}    
+        .divider {
+            display: block;
+            margin: 5px auto; 
+            width: 50px;       
+            height: auto;
+            opacity: 0.8;      
+        }
+
+        .video-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .video-hint {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(2, 48, 71, 0.7); 
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            pointer-events: none; 
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover .video-hint {
+            opacity: 0;
+        }
+
+        video::-webkit-media-controls {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .video-container:hover video::-webkit-media-controls {
+            opacity: 1;
+        }
+        
+        /* Side-by-Side Media Row Layout */
+        .prologue-media-row {
+            display: flex;
+            gap: 20px;          
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .prologue-media-row .media-box {
+            flex: 1;            
+            margin: 0;          
+            text-align: center;
+        }
+
+        .prologue-media-row .media-box img {
+            width: 100%;
+            height: 300px;      
+            object-fit: cover;  
+            border-radius: 4px;
+        }
+
+        .prologue-media-row .media-box iframe {
+            width: 100%;        
+            border-radius: 4px;
+            display: block;     
+        }
+
+        .prologue-media-row .media-box figcaption {
+            font-family: inherit;      
+            font-size: 0.9em;          
+            color: #555;               
+            text-align: center;        
+            margin-top: 10px;          
+            padding: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .prologue-media-row {
+                flex-direction: column; 
+            }
+            
+            .prologue-media-row .media-box img {
+                height: auto; 
+            }
+        }    
     </style>
 </head>
 
-
-
-<!--END HEADER-->
-
-
-
 <body>
 
-    <header>
+    <header style="text-align: center;">
         <h1>Origins</h1>
-        <H3><em>..... There and Back Again</em></H3>
+        <h3><em>..... There and Back Again</em></h3>
     </header>
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+
+    <img src="graphics/auseklis.png" class="divider" alt="divider">
+    
     <section id="preface">
         <h2>Preface</h2>
         <p>This all began as an attempt to translate Dad’s diaries for any of his descendants who at some stage might be interested in them. It developed into the story of how Helēna Mackevica and Jānis Avens came to start a new life in Australia. As such their story forms part of the larger one of those displaced persons who migrated to Australia in the aftermath of WWII.</p>
@@ -201,35 +181,27 @@ video::-webkit-media-controls {
         <h2>Prologue</h2>
 
         <article>
-            <p>
-                Jānis Avens, son of Jānis (b.1875) and Emīlija Gaigale was born in Kosa, Latvija in 1914. Kosa is barely a speck on the map about 100km from Rīga and an hour by foot from the parish centre Skujene. It is 33km from the Provincial capital Cēsis.</p> 
-            <p>
-    Their house was called Skuķi and it was from that that Dad's Grandmother Emelīne Šarlote (n. Bernharde) got her nickname: Skuķu Māte (the old lady from Skuķi).
-</p>
+            <p>Jānis Avens, son of Jānis (b.1875) and Emīlija Gaigale was born in Kosa, Latvija in 1914. Kosa is barely a speck on the map about 100km from Rīga and an hour by foot from the parish centre Skujene. It is 33km from the Provincial capital Cēsis.</p> 
+            <p>Their house was called Skuķi and it was from that that Dad's Grandmother Emelīne Šarlote (n. Bernharde) got her nickname: Skuķu Māte (the old lady from Skuķi).</p>
 
-<!-- Side-by-Side Media Container -->
-<div class="prologue-media-row">
-    <figure class="media-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8896.311272585583!2d25.410851240158067!3d57.09210171442225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e965b63cb9ece9%3A0x60ee3b0bc6126b2c!2sKosa%2C%20Skujene%20parish%2C%20C%C4%93sis%20Municipality%2C%20LV-4143%2C%20Latvia!5e1!3m2!1sen!2sau!4v1778891027236!5m2!1sen!2sau" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <figcaption>Location of Kosa, Latvia.</figcaption>
-    </figure>
+            <!-- Side-by-Side Media Container -->
+            <div class="prologue-media-row">
+                <figure class="media-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8896.311272585583!2d25.410851240158067!3d57.09210171442225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e965b63cb9ece9%3A0x60ee3b0bc6126b2c!2sKosa%2C%20Skujene%20parish%2C%20C%C4%93sis%20Municipality%2C%20LV-4143%2C%20Latvia!5e1!3m2!1sen!2sau!4v1778891027236!5m2!1sen!2sau" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <figcaption>Location of Kosa, Latvia.</figcaption>
+                </figure>
 
-    <figure class="media-box">
-        <img src="graphics/skuķi.jpg" alt="Skuķi homestead">
-        <figcaption>The Skuķi homestead in Kosa.</figcaption>
-    </figure>
-    
-</div>
+                <figure class="media-box">
+                    <img src="graphics/skuķi.jpg" alt="Skuķi homestead">
+                    <figcaption>The Skuķi homestead in Kosa.</figcaption>
+                </figure>
+            </div>
         </article>
 
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+        <img src="graphics/auseklis.png" class="divider" alt="divider">
 
         <article>
-
-            
             <h2>Because Context is Everthing ....</h2>
-
-
             <h3>Molotov–Ribbentrop Pact</h3>
             <p>It started on August 23, 1939 with the Treaty of Non-Aggression between Germany and the Union of Soviet Socialist Republics whereby the 20th century’s greatest monsters, Hitler and Stalin divided up Europe between them and effectively began WWII.</p>
             
@@ -244,7 +216,7 @@ video::-webkit-media-controls {
             <h3>Soviet occupation of Latvia in 1940-41: Baigais Gads</h3>
             <blockquote>
                 “June 17, 1940 - Soviet troops invade Latvia and occupy bridges, post/telephone, telegraph, and broadcasting offices .... The Soviet authorities, having gained control over Latvia, immediately imposed a regime of terror. Hundreds .... were arrested, including many leaders of the Republic of Latvia. Tribunals were set up to punish “traitors to the people.”.... The June deportation took place on June 13 and June 14, 1941, estimated at 15,600 men, women, and children, and including 20% of Latvia’s last legal government. Approximately 35,000 total (1.8% of Latvia’s population) were deported during the first Soviet occupation.”
-                <cite>Source: <a href="http://en.wikipedia.org/wiki/Soviet_occupation_of_Latvia_in_1940#1940-1941:_The_first_Soviet_occupation">Wikipedia</a></cite>
+                <cite>Source: <a href="http://en.wikipedia.org/wiki/Soviet_occupation_of_Latvia_in_1940#1940-1941:_The_first_Soviet_occupation" target="_blank">Wikipedia</a></cite>
             </blockquote>
 
             <!-- Centered Graphic and Caption -->
@@ -252,39 +224,30 @@ video::-webkit-media-controls {
                 <img src="graphics/1941.jpg" alt="Cattle wagons">
                 <figcaption>Torņkalna Railway Station: monument to those deported during the first Soviet occupation.</figcaption>
             </figure>
-            
         </article>
 
-       
         <article>
-            
-<h3>German occupation of Latvia in 1941-45</h3>
+            <h3>German occupation of Latvia in 1941-45</h3>
             <p>On 22 June, 1941 Hitler betrayed his co-conspirator Stalin and launched Operation Barbarossa, the invasion of Russia by Germany. Given the Russian reign of terror, the Germans were at first greeted as liberators by most Latvians. But they were about to be deceived. As the War turned against the Germans, illegal conscription of citizens of occupied countries was implemented. In Latvia this eventually lead to the formation of the medaciously named <a href="https://en.wikipedia.org/wiki/Latvian_Legion" target="_blank">Latvian SS-Volunteer-Legion</a>.</p>
             
-
-<!-- Centered Graphic and Caption -->
+            <!-- Centered Graphic and Caption -->
             <figure class="center-figure">
                 <img src="graphics/notice.jpg" alt="Conscription notice">
-                <figcaption>Ar šo esat iesaukts Latviešu SS-brīvprātīgo leģionā.<br>You are hereby called up for service in the Latvian SS-Volunteer-Legion.
-                </figcaption>
+                <figcaption>Ar šo esat iesaukts Latviešu SS-brīvprātīgo leģionā.<br>You are hereby called up for service in the Latvian SS-Volunteer-Legion.</figcaption>
             </figure>
 
- <article>
-            
             <h4>Hague Convention (October 18, 1907)</h4>
             <p>Annex, Sec. III, Art. 45:</p>
             <blockquote>“It is forbidden to compel the inhabitants of occupied territory to swear allegiance to the hostile Power.”</blockquote>
-            <cite><a href="http://avalon.law.yale.edu/20th_century/hague04.asp#art45">Avalon Project, Yale Law</a></cite>
+            <cite><a href="http://avalon.law.yale.edu/20th_century/hague04.asp#art45" target="_blank">Avalon Project, Yale Law</a></cite>
 
             <p>“The law of nations and international precedent .... is interpreted as an injunction against the implementation of mandatory military conscription policies over the local populace....”</p>
             <p>“.... compulsory military conscription under such circumstances [also] violates Articles 40, 45, and 51 of the “Geneva Convention ....” (1949).</p>
-            <cite><a href="https://taiwanadvice.com/montconv-0.htm">Taiwan Advice</a></cite>
-        </article>
-
+            <cite><a href="https://taiwanadvice.com/montconv-0.htm" target="_blank">Taiwan Advice</a></cite>
 
             <blockquote>
                 “The punishment for draft evasion: “At a time when each true Latvian man who can carry a weapon is standing guard over his fatherland, three strong young men have chosen a different route... The Special War Tribunal of the General Inspectorate of the Latvian SS Volunteer Legion heard evidence against Edgars Vilciņš, Osvalds Streļķis and Jānis Vilciņš... The Special War Tribunal sentenced 26 year old Edgars Vilciņš and 23 year old Osvalds Streļķis to 15 years of hard labour...”
-                <cite>Tēvija (Fatherland), 20 September 1944. Source: <a href="http://www.am.gov.lv/en/latvia/history/legion/">Latvian Ministry of Foreign Affairs</a> (Retrieved 2010)</cite>
+                <cite>Tēvija (Fatherland), 20 September 1944. Source: <a href="http://www.am.gov.lv/en/latvia/history/legion/" target="_blank">Latvian Ministry of Foreign Affairs</a> (Retrieved 2010)</cite>
             </blockquote>
 
             <blockquote>
@@ -295,49 +258,51 @@ video::-webkit-media-controls {
     </section>
 
     <!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/service.jpg" alt="National Service document">
-                <figcaption>Jānis' National Service document showing him assigned to reserves until 1 Jan 1955</figcaption>
-            </figure>
+    <figure class="center-figure">
+        <img src="graphics/service.jpg" alt="National Service document">
+        <figcaption>Jānis' National Service document showing him assigned to reserves until 1 Jan 1955</figcaption>
+    </figure>
 
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+    <img src="graphics/auseklis.png" class="divider" alt="divider">
 
-<!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/family.jpg" alt="Family">
-                <figcaption>Olga (Dad's first wife), Lidija (Sister), Ādofs Avens (Cousin), Dad (age c. 28), Imants (Our half brother), Olgas's mother Ieva (later called “māmuļiņa”) c. 1942</figcaption>
-            </figure>
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+    <!-- Centered Graphic and Caption -->
+    <figure class="center-figure">
+        <img src="graphics/family.jpg" alt="Family">
+        <figcaption>Olga (Dad's first wife), Lidija (Sister), Ādofs Avens (Cousin), Dad (age c. 28), Imants (Our half brother), Olgas's mother Ieva (later called “māmuļiņa”) c. 1942</figcaption>
+    </figure>
+    
+    <img src="graphics/auseklis.png" class="divider" alt="divider">
 
-        <p>“In 1946, the Nuremberg Tribunal declared the Waffen-SS to be a criminal organization, making an exception of people who were forcibly conscripted. Throughout the post-war years, Allies would apply this exception to the soldiers of the Latvian Legion and the Estonian Legion. The US Displaced Persons Commission in September 1950 declared that:</p>
+    <p>“In 1946, the Nuremberg Tribunal declared the Waffen-SS to be a criminal organization, making an exception of people who were forcibly conscripted. Throughout the post-war years, Allies would apply this exception to the soldiers of the Latvian Legion and the Estonian Legion. The US Displaced Persons Commission in September 1950 declared that:</p>
         
-        <p>"The Baltic Waffen SS Units (Baltic Legions) are to be considered as separate and distinct in purpose, ideology, activities, and qualifications for membership from the German SS, and therefore the Commission holds them not to be a movement hostile to the Government of the United States."</p>
-        <cite><a href="http://en.wikipedia.org/wiki/Latvian_Legion">Wikipedia (retrieved 29 May, 2010)</a></cite>
+    <p>"The Baltic Waffen SS Units (Baltic Legions) are to be considered as separate and distinct in purpose, ideology, activities, and qualifications for membership from the German SS, and therefore the Commission holds them not to be a movement hostile to the Government of the United States."</p>
+    <cite style="margin-bottom: 20px;"><a href="http://en.wikipedia.org/wiki/Latvian_Legion" target="_blank">Wikipedia (retrieved 29 May, 2010)</a></cite>
 
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+    <img src="graphics/auseklis.png" class="divider" alt="divider">
 
-   <section class="meta-text">
+    <div class="meta-text">
         <p>When it was all over with millions dead for no reason as usual, Hitler died a cowards death by suicide on 30 April, 1945. His co-conspirator Stalin proclaimed himself the saviour of Europe and lived on to murder even more people until eventually meeting his maker in Hell on 5 March, 1953. It is said that Latvians fought on both side of the War: they all lost.</p>
         
-<img src="graphics/auseklis.png" class="divider" alt="divider">
+        <img src="graphics/auseklis.png" class="divider" alt="divider">
 
         <!-- Centered Transition Sentence -->
         <p style="text-align: center; margin: 40px 0; display: block; width: 100%;">
-    <strong>Jānis Avens’ life was to take an unimaginable change of course on 22 October, 1943.</strong>
-</p>
+            <strong>Jānis Avens’ life was to take an unimaginable change of course on 22 October, 1943.</strong>
+        </p>
 
         <!-- Centered Video and Caption -->
-<figure class="center-figure">
-    <div class="video-container">
-        <video controls>
-            <source src="video/adolfs_2008.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-hint">Hover for video</div>
+        <figure class="center-figure">
+            <div class="video-container">
+                <video controls>
+                    <source src="video/adolfs_2008.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-hint">Hover for video</div>
+            </div>
+            <figcaption>My Father’s cousin Adolfs in 2008 relates how he and Jānis were both conscripted in October 1943. Separated by WWII they would be reunited 40 years later when he and his wife visited Australia.</figcaption>
+        </figure>
     </div>
-    <figcaption>My Father’s cousin Adolfs in 2008 relates how he and Jānis were both conscripted in October 1943. Separated by WWII they would be reunited 40 years later when he and his wife visited Australia.</figcaption>
-</figure>
-    </section>
-<p><a href="chapter1.html">Proceed to Chapter One: Operation Barbarossa</a></p>
+
+    <p style="text-align: center; margin-top: 40px;"><a href="chapter1.html">Proceed to Chapter One: Operation Barbarossa</a></p>
 </body>
 </html>
