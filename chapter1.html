@@ -24,7 +24,15 @@
             background-color: #fdfaf3; 
         }
 
-        h1, h2 { color: #5d4037; }
+        h1, h2 { 
+            color: #5d4037; 
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
 
         /* The Divider */
         .divider {
@@ -75,7 +83,7 @@
             text-decoration: none;
         }
 
-/* Row 1, Column 2: Latvian Transcription */
+        /* Row 1, Column 2: Latvian Transcription */
         .diary-latvian {
             grid-column: 2 / 3;
             font-family: "Times New Roman", Times, serif;
@@ -95,18 +103,30 @@
             text-align: left; /* Explicitly left-align */
         }
         
-/* Ensure images and captions inside centered figures are responsive */
-.center-figure img {
-    max-width: 100%;    /* Image will shrink to fit container width */
-    height: auto;       /* Maintain the image's original aspect ratio */
-    display: block;      /* Prevent small spacing gaps at the bottom */
-    margin: 0 auto;      /* Keep the image horizontally centered */
-}
+        /* Ensure images and captions inside centered figures are responsive */
+        .center-figure img {
+            max-width: 100%;    /* Image will shrink to fit container width */
+            height: auto;       /* Maintain the image's original aspect ratio */
+            display: block;      /* Prevent small spacing gaps at the bottom */
+            margin: 0 auto;      /* Keep the image horizontally centered */
+        }
 
-.center-figure figcaption {
-    width: 100%;        /* Caption text must stay within the phone screen */
-    box-sizing: border-box; /* Ensure padding doesn't push caption off-screen */
-}
+        /* This part handles the general centering container */
+        .center-figure {
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        /* This part handles the captions for both */
+        .center-figure figcaption {
+            width: 100%;        /* Caption text must stay within the phone screen */
+            box-sizing: border-box; /* Ensure padding doesn't push caption off-screen */
+            font-weight: normal;
+            color: #555;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
 
         /* Responsive adjustment for mobile phones */
         @media (max-width: 600px) {
@@ -117,62 +137,44 @@
                 grid-column: 1 / 2;
             }
         }
-               /* This part handles the general centering container */
-.center-figure {
-    display: block;
-    margin: 30px auto;
-    text-align: center;
-}
 
-/* This part handles the captions for both */
-.center-figure figcaption {
-    font-weight: normal;
-    color: #555;
-    font-size: 0.85em;
-    margin-top: 8px;
-}
+        /* Footnote link style */
+        .footnote-link {
+            text-decoration: none;
+            color: #1c39bb; /* Midnight Blue */
+            font-weight: bold;
+            padding: 0 2px;
+        }
 
-/* Footnote link style */
-.footnote-link {
-    text-decoration: none;
-    color: #1c39bb; /* Your Midnight Blue */
-    font-weight: bold;
-    padding: 0 2px;
-}
+        .footnote-link:hover {
+            text-decoration: underline;
+        }
 
-.footnote-link:hover {
-    text-decoration: underline;
-}
+        /* Footnote section at the bottom */
+        .footnotes-section {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 60px;
+            width: 100%;
+            clear: both;
+        }
 
-/* Footnote section at the bottom */
-.footnotes-section {
-    font-size: 0.85em;
-    color: #555;
-    margin-top: 60px;
-}
+        /* This forces the line to be full width regardless of where it is */
+        .footnote-divider {
+            display: block !important;
+            width: 100% !important;
+            border: 0 !important;
+            border-top: 1px solid #e0d9c5 !important; /* Feint color */
+            margin: 40px 0 20px 0 !important;
+        }
 
-/* This forces the line to be full width regardless of where it is */
-.footnote-divider {
-    display: block !important;
-    width: 100% !important;
-    border: 0 !important;
-    border-top: 1px solid #e0d9c5 !important; /* Your feint color */
-    margin: 40px 0 20px 0 !important;
-}
+        .backlink {
+            text-decoration: none;
+            color: #1c39bb;
+            margin-left: 5px;
+        }
 
-/* This ensures the section itself isn't constricted */
-.footnotes-section {
-    width: 100%;
-    clear: both;
-}
-
-.backlink {
-    text-decoration: none;
-    color: #1c39bb;
-    margin-left: 5px;
-}
-
-/* Wikipedia-style Superscript fix */
+        /* Wikipedia-style Superscript fix */
         sup {
             font-size: 0.7em;
             vertical-align: super;
@@ -185,11 +187,18 @@
             font-weight: bold;
         }
 
-h1 {
+        .center-text {
     text-align: center;
-    color: #5d4037; /* Matches your existing header brown */
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin: 30px auto;
+    color: #2e7d32; /* Matches the green annotation style */
+    font-style: italic;
+        }
+
+        /* Inline green annotations within translations */
+    .translation-annotation {
+    color: #2e7d32;
+    font-size: 0.95em;
+    font-style: italic;
 }
 
     </style>
@@ -202,15 +211,16 @@ h1 {
 
     <header>
         <h1>- 1943 -</h1>
-       
     </header>
- <!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/players.jpg" alt="Dramatis Personae">
-                <figcaption>
-                Dramatis Personae: Kosas pagasta pašaizsardzības grupa, 1941. g. oktobrī
-                <br>Kosa Self Defence Group, Oct 1941<sup id="ref1"><a href="#fn1" class="footnote-link">[1]</a></sup>
-            </figcaption>
+
+    <!-- Centered Graphic and Caption -->
+    <figure class="center-figure">
+        <img src="graphics/players.jpg" alt="Dramatis Personae">
+        <figcaption>
+            Dramatis Personae: Kosas pagasta pašaizsardzības grupa, 1941. g. oktobrī
+            <br>Kosa Self Defence Group, Oct 1941<sup id="ref1"><a href="#fn1" class="footnote-link">[1]</a></sup>
+        </figcaption>
+    </figure>
 
     <!-- BEGIN DIARY BLOCK 1-->
     <section class="diary-container">
@@ -223,35 +233,33 @@ h1 {
 
         <!-- Top Right: Latvian -->
         <div class="diary-latvian">
-            
             <p>
-                1943. 22 okt. 	Agri no rīta par tāļruni Ezergailis paziņo ka 23 okt pulkst. 13:00 jabūt Cēsis pie komisijas. Šis nāca man kā zibeņa spēriens. Kur tūdaļ devos uz mājam abi ar sieviņu.</p>
-
-             <p>   23 okt. 	No rīta agri biju jau augšā un vārtijos par gultu un domāju kad vēl gulēšu šai vietā. Un vai maz vairs kādu reiz. Pēc kam sieviņu cēļu augšā kuŗa asaras grimdama gatavoja man ceļa somu. Sapulcēšās (sic) uz braukšanu bija pulkst. 10:00 pagasta namā. Pirmo reizi komisija mani nenozīmēja. Bet gan bija nozīmēts [Oskars] Zosuls, bet K[ārlis] Ezergailis šo lietu sagrozija tā kā man bija jaiet.
+                1943. 22 okt.     Agri no rīta par tāļruni Ezergailis paziņo ka 23 okt pulkst. 13:00 jabūt Cēsis pie komisijas. Šis nāca man kā zibeņa spēriens. Kur tūdaļ devos uz mājam abi ar sieviņu.
             </p>
-
-            <p>24 okt. 	Aizbraucam uz Rīgu pēc pusdienā.</p>
+            <p>
+               23 okt.     No rīta agri biju jau augšā un vārtijos par gultu un domāju kad vēl gulēšu šai vietā. Un vai maz vairs kādu reiz. Pēc kam sieviņu cēļu augšā kuŗa asaras grimdama gatavoja man ceļa somu. Sapulcēšās (sic) uz braukšanu bija pulkst. 10:00 pagasta namā. Pirmo reizi komisija mani nenozīmēja. Bet gan bija nozīmēts [Oskars] Zosuls, bet K[ārlis] Ezergailis šo lietu sagrozija tā kā man bija jaiet.
+            </p>
+            <p>
+                24 okt.     Aizbraucam uz Rīgu pēc pusdienā.
+            </p>
         </div>
 
         <!-- Bottom: English -->
         <div class="diary-english">
-            
             <p>
-                22 Oct --  Early in the morning Ezergailis informed me by phone that on 23rd Oct at 13:00 I had to be at the Commission in Cēsis. This struck me like a bolt of lightening. I went home immediately with my wife. </p>
-
-                <p>
-                23 Oct --  I woke early and tossed around in bed wondering when I would again sleep in this place. Whether I would at all. Later I woke my wife who, weighed down by tears, packed my bag. Muster for the trip [to Cēsis] was at the district hall at 10:00. The first time around the Commission hadn't selected me for call up. Rather [Oskars] Zosuls was was selected, however K[ārlis] Ezergailis twisted things so that I had to go.
-
+                22 Oct --  Early in the morning Ezergailis informed me by phone that on 23rd Oct at 13:00 I had to be at the Commission in Cēsis. This struck me like a bolt of lightening. I went home immediately with my wife. 
             </p>
-            <p>24 Oct -- In the afternoon we travel to Rīga.</p>
+            <p>
+                23 Oct --  I woke early and tossed around in bed wondering when I would again sleep in this place. Whether I would at all. Later I woke my wife who, weighed down by tears, packed my bag. Muster for the trip [to Cēsis] was at the district hall at 10:00. The first time around the Commission hadn't selected me for call up. Rather [Oskars] Zosuls was was selected, however K[ārlis] Ezergailis twisted things so that I had to go.
+            </p>
+            <p>
+                24 Oct -- In the afternoon we travel to Rīga.</p>
         </div>
 
     </section>
-    <!-- END DIARY BLOCK -->
+    <!-- END DIARY BLOCK 1-->
 
-
-
-<!-- BEGIN DIARY BLOCK 2-->
+    <!-- BEGIN DIARY BLOCK 2-->
     <section class="diary-container">
         
         <!-- Top Left: Scan -->
@@ -262,69 +270,66 @@ h1 {
 
         <!-- Top Right: Latvian -->
         <div class="diary-latvian">
-            
-            <p>
-                25 okt. 	Uz saformēšanu novietoja Rīgā Brīvības ielā 96. </p>
-
-             <p>   30 okt.  	Sieviņa un māsiņa bija atbraukušas mani apciemot.            </p>
-            <P>6 nov. 	Atrodos Sebežā dzelzceļa apsardzībai.</P>
-            <p>17 nov. 	Atstajam Sebežu.</p>
-            <P>18 nov. 	Atrodamies Idricas stacijā un uz valsts svētkiem iemetām par šņabim. </P>
-            <p>19 nov. 	Nobraucam paredzētā vietā. S.D.5. [?]</p>
+            <p>25 okt.     Uz saformēšanu novietoja Rīgā Brīvības ielā 96.</p>
+            <p>30 okt.      Sieviņa un māsiņa bija atbraukušas mani apciemot.</p>
+            <p>6 nov.     Atrodos Sebežā dzelzceļa apsardzībai.</p>
+            <p>17 nov.     Atstajam Sebežu.</p>
+            <p>18 nov.     Atrodamies Idricas stacijā un uz valsts svētkiem iemetām par šņabim.</p>
+            <p>19 nov.     Nobraucam paredzētā vietā. S.D.5. [?]</p>
         </div>
 
         <!-- Bottom: English -->
         <div class="diary-english">
+        <p>25 Oct --  We were billeted at <a href="https://maps.app.goo.gl/wqc9BZZrQroiERTB6" target="_blank">96 Brīvības Boulevard</a> awaiting formation <span class="translation-annotation">[of Auxiliary Security Battalion 319-F]. It was while he was billeted here that Jānis last saw his cousin Adolfs Avens until they reunited in person in the 1980s.</span></p>
+
+        <p><span class="translation-annotation">Battalion 319-F formed in a very short time at <a href="https://maps.app.goo.gl/5ibdfMAHqWNAvwxi6" target="_blank">93 Brīvības</a>. The newly formed battalion was only meant to operate within Latvia, and conscripts were meant to serve only for eight weeks.<sup id="ref2"><a href="#fn2" class="footnote-link">[2]</a></sup></span></p>
+
+        <p>30 Oct --  My dear wife and sister came to visit me.</p>
+        <p><span class="translation-annotation">3 Nov -- Parade of 319 Btl. Addressed by General Šrēder, were told there was no reason not to serve outside Latvia and that he hoped that conscripts' service would be limited to eight weeks. After the parade, uniforms were issued which could be retained by troups [on discharge]. The parade closed with singing of  Latvia's national anthem "Dievs Svētī Latviju".</span></p>
+        <p>6 Nov --  I am in <a href="https://maps.app.goo.gl/i2TrJqyUe6aBTCh38" target="_blank">Sebezh</a> on railway guard duty.</p>
+        <p><span class="translation-annotation">16 Nov -- Btl receives orders to take up positions guarding the Idritsa - Opochka railway line. Company 1 stayed in Sebezh and Companies 2, 3 and 4 went to Idritsa.<sup id="ref3"><a href="#fn3" class="footnote-link">[3]</a></sup></span></p>     
+        <p>17 Nov -- We leave Sebezh.</p>
+        <p>18 Nov -- We find ourselves at <a href="https://maps.app.goo.gl/1n2XvwHdfNi6Eg3f6" target="_blank">Idritsa</a> railway station and to celebrate Latvia's National Day we have a couple of drinks.</p>
             
-            <p>25 Oct --  We were billeted at 96 Brīvības Boulevard awaiting formation [of the Batallion].</p>
-            <p>30 Oct --  My dear wife and sister came to visit me.</p>
-            <p>6 Nov --  I am in Sebezh on railway guard duty.</p>
-            <p>17 Nov -- We leave Sebezh.</p>
-            <p>18 Nov -- We find ourselves at Idritsa railway station and to celebrate Latvia's National Day we have a couple of drinks.</p>
-            <p>19 Nov -- We arrive at the designated place. S.D.5</p>
-        </div>
+             
+        <p>19 Nov -- We arrive at the designated place. S.D.5 <span class="translation-annotation">(guarding Zilupe - Sebezh - Idritsa - Novosokolniki [Новосоко́льники] railway line, part of the Rīga - Moscow key German supply route).</span></p>
+</div>
 
     </section>
+    <!-- END DIARY BLOCK 2-->
 
-    <!-- END DIARY BLOCK -->
+    <p class="center-text"><strong>There is a lengthy gap here in the diary which resumes on 22 Sept, 1944.</strong></p>
 
+    
+    <h1>- 1944 -</h1> 
 
-<p><strong>There is a lengthy gap here in the diary which resumes on 22 Sept, 1944.</strong></p>
+    <!-- Centered Graphic and Caption -->
+    <figure class="center-figure">
+        <img src="graphics/l.1.jpg" alt="Idritsa">
+        <figcaption>
+            Uzņemts 1944 gadā jenvarī Krievijā 8km no Idricas 
+            <br>Taken January 1944 8km from Idritsa
+        </figcaption>
+    </figure>
 
+    <!-- Centered Graphic and Caption -->
+    <figure class="center-figure">
+        <img src="graphics/l.2.jpg" alt="Dramatis Personae">
+        <figcaption>
+            Uzņemts 1944 gadā martā Olaine kūdras fabrikā 
+            <br>Taken March 1944, peat factory Olaine, Latvia
+            <br>Jānis has apparently been promoted to corporal by this time (and lost some weight)
+        </figcaption> 
+    </figure>           
 
-<h1>- 1944 -</h1>    
-
- <!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/l.1.jpg" alt="Idritsa">
-                <figcaption>
-                Uzņemts 1944 gadā jenvarī Krievijā 8km no Idricas 
-                <br>Taken January 1944 8km from Idritsa
-            </figcaption>
-
- <!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/l.2.jpg" alt="Dramatis Personae">
-                <figcaption>
-                Uzņemts 1944 gadā martā Olaine kūdras fabrikā 
-                <br>Taken March 1944, peat factory Olaine, Latvia
-                <br>Janis has apparently been promoted to corporal by this time (and lost some weight)
-            </figcaption>            
-
-<!-- BEGIN DIARY BLOCK 3-->
-
+    <!-- BEGIN DIARY BLOCK 3-->
     <section class="diary-container">
-
-
         
         <!-- Top Left: Scan -->
         <div class="diary-scan-box">
-        <a href="graphics/d.44.1.jpg" target="_blank" class="expand-icon">View full size</a>
-        <img src="graphics/d.44.1.jpg" alt="Diary Page Scan">
+            <a href="graphics/d.44.1.jpg" target="_blank" class="expand-icon">View full size</a>
+            <img src="graphics/d.44.1.jpg" alt="Diary Page Scan">
         </div>
-
-
-
 
         <!-- Top Right: Latvian -->
         <div class="diary-latvian">
@@ -335,9 +340,6 @@ h1 {
              <p></p>
         </div>
 
-
-
-
         <!-- Bottom: English -->
         <div class="diary-english">
              <p></p>
@@ -348,22 +350,27 @@ h1 {
         </div>
 
     </section>
-
-
-<!-- END DIARY BLOCK -->
+    <!-- END DIARY BLOCK 3-->
 
     <p>Further entries follow...</p>
 
     <section class="footnotes-section">
-        <hr class="footnote-divider">
-        <ol>
-            <li id="fn1">Plaudis, Arturs. Kosa : novads un tā ļaudis. Sakārtojis un rediģējis Arturs Plaudis.<br> 
+    <hr class="footnote-divider">
+    <ol>
+        <li id="fn1">
+            Plaudis, Arturs. Kosa : novads un tā ļaudis. Sakārtojis un rediģējis Arturs Plaudis.<br> 
             Park Orchards [Vic.] : J.A. Janson's Memorial Fund, 1981. <a href="https://catalogue.nla.gov.au/catalog/1677639" target="_blank">ISBN: 0959642153</a> pp 112-3. 
-    
-    <a href="#ref1" class="backlink">↩</a>
-</li>
-        </ol>
-    </section>
+            <a href="#ref1" class="backlink">↩</a>
+        </li>
+        <li id="fn2">
+            Freivalds, Osvalds (ed) & Caunitis, Oskars (ed). <a href="https://dvcv.org.lv/latviesu_karavirs_otra_pasaules_kara_laika" target="_blank">Latviešu karavirs Otrā pasaules kara laikā; dokumentu un atmiņu krājums</a>. Daugavas Vanagu Centrālas valdes izdevums, 1972. vol 2, p 273. <a href="https://catalogue.nla.gov.au/catalog/1533523" Target="_blank">NLA Bib ID: 1533523</a>           
+            <a href="#ref2" class="backlink">↩</a>
+        </li>
+        <li id="fn3">L. k. v.2 p.274         
+            <a href="#ref3" class="backlink">↩</a>
+        </li>
+    </ol>
+</section>
 
     <footer>
         <hr>
