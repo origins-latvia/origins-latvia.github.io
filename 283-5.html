@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>319-F. Bataljons</title>
+    <link rel="icon" type="image/png" href="graphics/auseklis.png">
+
+<!--START CSS RULES-->
+
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        line-height: 1.6; 
+        max-width: 900px; 
+        margin: 40px auto; 
+        padding: 20px; 
+        color: #2d2d2d; 
+        background-color: #fdfaf3; 
+    }
+
+    h1, h2, h3 { 
+        color: #5d4037; 
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 0px; 
+        margin-bottom: 20px;
+    }
+
+    /* Diary Grid System */
+    .diary-container {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr; 
+        gap: 30px;
+        margin: 40px 0;
+        border: 1px solid #e0d9c5;
+        padding: 25px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        align-items: start;
+    }
+
+    .diary-scan-box {
+        position: relative;
+        grid-column: 1 / 2;
+    }
+
+    .diary-scan-box img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #eee;
+        display: block;
+    }
+
+    .expand-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        padding: 4px 8px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #5d4037;
+        text-decoration: none;
+    }
+
+    .diary-latvian {
+        grid-column: 2 / 3;
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 1.05em;
+        color: #1c39bb; 
+        line-height: 1.7;
+    }
+
+    .diary-english {
+        grid-column: 1 / 3; 
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    
+    .center-figure {
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .center-figure img {
+        max-width: 100%;    
+        height: auto;       
+        display: block;      
+        margin: 0 auto;      
+    }
+
+    .center-figure figcaption {
+        font-weight: normal;
+        color: #555;
+        font-size: 0.85em;
+        margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+        .diary-container {
+            grid-template-columns: 1fr;
+        }
+        .diary-scan-box, .diary-latvian, .diary-english {
+            grid-column: 1 / 2;
+        }
+    }
+
+    .footnote-link {
+        text-decoration: none;
+        color: #1c39bb; 
+        font-weight: normal;
+        padding: 0 2px;
+    }
+
+    .footnote-link:hover {
+        text-decoration: underline;
+    }
+
+    .footnotes-section {
+        font-size: 0.85em;
+        color: #555;
+        margin-top: 60px;
+        width: 100%;
+        clear: both;
+    }
+
+    .footnote-divider {
+        width: 100% !important;
+        border: 0 !important;
+        border-top: 1px solid #e0d9c5 !important; 
+        margin: 40px 0 20px 0 !important;
+    }
+
+    .backlink {
+        text-decoration: none;
+        color: #1c39bb;
+        margin-left: 5px;
+    }
+
+    sup {
+        font-size: 0.7em;
+        vertical-align: super;
+        line-height: 0;
+    }
+    
+    sup a {
+        text-decoration: none;
+        color: #1c39bb;
+        font-weight: bold;
+    }
+
+    .center-text {
+        text-align: center;
+        margin: 30px auto;
+        color: #2e7d32; 
+        font-style: italic;
+    }
+
+    .translation-annotation {
+        color: #2e7d32;
+        font-size: 0.95em;
+        font-style: italic;
+    }
+
+    .annotation-block {
+        color: #2e7d32;
+        font-size: 0.95em;
+        font-style: italic;
+    }
+    
+    .annotation-block h3 {
+        color: #2e7d32; 
+    }
+
+    .break-word {
+        word-break: break-all;
+    }
+</style>
+
+<!--END OF CSS STYLE RULES-->
+
+</head>
+
+<body>
+
+    <header>
+        <h1>- 319-F Bataljons -</h1>
+    </header>
+
+
+
+    <!-- BEGIN BLOCK 1-->
+    <section class="diary-container">
+        
+        <!-- Top Left: Scan -->
+        <div class="diary-scan-box">
+            <a href="lk-pages/283.jpg" target="_blank" class="expand-icon">View full size</a>
+            <img src="lk-pages/283.jpg" alt="Page 283">
+        </div>
+
+        <!-- Top Right: Latvian -->
+        <div class="diary-latvian">
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+        </div>
+
+        <!-- Bottom: English -->
+        <div class="diary-english">
+             <p>319-F. BATTALION
+
+On July 22, the 319th Battalion began to move on foot to the Daudzeva
+area. However, it was no longer possible to reach it, as the conditions on the front had changed rapidly. Jelgava was already burning and was under heavy fire from Russian tanks and aircraft. The battalion was directed to Bauska, which it also managed to reach on the night of July 29/30. There, the battalion took up defensive positions on the right bank of the Musa River, from the Bauska tobacco factory to Pamušai. Already on July 31, Russian forces appeared near Bauska from the Lithuanian side. The battalion, together with small German units, intercepted them on the southern outskirts of the city of Bauska. The 23rd and 322nd Battalions were also located in the Bauska area. Both battalions were part of the German ."KampfgruppeGieseke".</p>
+        </div>
+
+    </section>
+    <!-- END BLOCK 1-->
+
+<!-- BEGIN BLOCK 2-->
+    <section class="diary-container">
+        
+        <!-- Top Left: Scan -->
+        <div class="diary-scan-box">
+            <a href="lk-pages/284.jpg" target="_blank" class="expand-icon">View full size</a>
+            <img src="lk-pages/284.jpg" alt="Page 284">
+        </div>
+
+        <!-- Top Right: Latvian -->
+        <div class="diary-latvian">
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+        </div>
+
+        <!-- Bottom: English -->
+        <div class="diary-english">
+             <p>The 319th Latvian Battalion remained in positions along the Mūsa River, starting from the Bauska concrete bridge to the Žigla houses and further to the left between the Egerta and Vepra houses towards the Mēmele River, throughout the month of August. The fighting near Bauska at the end of August turned out to be very heavy, as the city of Bauska was important for the Russian forces for further successes on the way to Riga. The battalion lost many casualties in these battles. The battalion commander, Maj. O. Tiltiņš, also died, his place was temporarily taken by Capt. J. Krūmiņš. 
+                
+             <p>On August 22, the battalion consisted of 14 officers, 79 instructors and 225 soldiers - a total of 318 men. At that time, the armament included, in addition to rifles, 6 heavy machine guns, 25 submachine guns and 15 machine guns. The 1st Company was commanded by Lt. Krasts, 2nd Company — Lt. Dzenītis, 3rd Company — 1st Lt. Grigals, 4th Company — Capt. Krūmiņš and sapper platoon — Lt. Kalniņš.</p>   
+                                
+
+             <p>On September 5, the battalion moved to new positions in the Jaunsaule
+area along the Mēmele River, where it replaced a German unit that had built trenches and bunkers in this front sector. Here, the battalion
+had to take up positions approximately 2 km wide for each company, as the German
+command considered this front sector to be passive and unimportant.
+However, the battalion could not stay here for long, as the Russian offensive in the Bauska region began and the battalion was in danger of being cut off from the rear. Lt. Sarkans and many other soldiers of the battalion
+fell in the battles in the Jaunsaule
+front sector.</p>
+
+                <p>On September 16, the battalion received an order to break away from its positions in the Jaunsaule area and retreat to the Lecava River line in the Baltā Krog area, where the battalion arrived early the next morning and took up positions along the northern bank of the Lecava River. The sound of battle was already echoing loudly in the battalion's rear. Soon, the company on the battalion's right wing also began fighting the approaching enemy. In order to avoid being surrounded, the battalion received an order to retreat, as there was hope of breaking away in the direction of the Bārbele-Tome manors through a forest gap that the enemy had not yet occupied. Communications had been disrupted, heavy weapons, mortars and anti-tank guns had been damaged and had to be abandoned to the enemy. Most of the battalion's transport also fell into Russian hands. Individual soldiers, on their own initiative, retreated through the open forest gap to the north, in the Tome-Lielvārde direction. After several days, the remnants of the battalion gathered in Lielvārde, where the soldiers participated in road repair work for a few days. From Lielvārde, the battalion, consisting of 3 companies, moved to Ogri. (See also 293rd Ipp. pltn. Bulle's article of 24.9.1944.)</p>
+
+
+        </div>
+
+    </section>
+    <!-- END BLOCK 2 -->
+
+<!-- BEGIN BLOCK 3-->
+    <section class="diary-container">
+        
+        <!-- Top Left: Scan -->
+        <div class="diary-scan-box">
+            <a href="lk-pages/285.jpg" target="_blank" class="expand-icon">View full size</a>
+            <img src="lk-pages/285.jpg" alt="Page 285">
+        </div>
+
+        <!-- Top Right: Latvian -->
+        <div class="diary-latvian">
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+             <p></p>
+        </div>
+
+        <!-- Bottom: English -->
+        <div class="diary-english">
+
+            <p>The battalion remained in Ogre for only a few days. From Ogre, the battalion crossed the Daugava bridge at Nāves Island and headed to Olaine, which it reached on October 5. Here the battalion worked on repairing the roads so that the troops could leave for Kalnciems. From Olaine, the battalion was withdrawn to Kurzeme, where it was mainly used for position construction work. Here, since November 8, the battalion had been assigned to Sicherungs Regiment 120, which was further subordinate to Korūks 584 (Kommandeur des rückwärtigen Armeegebiets) and the headquarters of the 16th Army.</p>
+              
+             <p>The battalion headquarters was initially located in Lejas, Kuldiga parish, later in Pekas, Zemīte parish. At the beginning of February 1945, the battalion numbered 382 men, but on March 13, only 120 men remained. Many had fallen, been wounded, or fallen ill, but reinforcements did not arrive. During the Courland seige, the battalion was commanded by Maj. O. Tiltiņš, the 1st company by Capt. Krūmiņš, the 2nd company by Lt. Ozols, and the 3rd company by Vltn. Grigals.</p>
+
+             <p>The battalion was captured by the Russians on May 8, 1945.</p>   
+   
+                
+           
+        </div>
+
+    </section>
+    <!-- END BLOCK 3-->
+
+    <footer>
+        <hr>
+        <p><a href="index.html">Return to Preface</a></p>
+    </footer>
+
+</body>
+</html>
