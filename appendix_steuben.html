@@ -92,58 +92,67 @@
             text-decoration: underline;
         }
 
-            .center-figure img {
-        max-width: 100%;    
-        height: auto;       
-        display: block;      
-        margin: 0 auto;      
-    }
+        .center-figure img {
+            max-width: 100%;    
+            height: auto;       
+            display: block;      
+            margin: 0 auto;      
+        }
 
-    /* Side-by-Side Images with Different Widths */
-.appendix-media-row {
-    display: flex;
-    gap: 20px;          
-    margin: 30px 0;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-}
+        /* Side-by-Side Images with Different Widths */
+        .appendix-media-row {
+            display: flex;
+            gap: 20px;          
+            margin: 30px 0;
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-.appendix-media-row .media-box {
-    flex: 0 1 auto;            
-    margin: 0;          
-    text-align: center;
-}
+        .appendix-media-row .media-box {
+            flex: 0 1 auto;            
+            margin: 0;          
+            text-align: center;
+        }
 
-.appendix-media-row .media-box img {
-    height: 350px; /* Adjust this to make them larger or smaller vertically */
-    width: auto;
-    object-fit: contain;  
-    border-radius: 4px;
-}
+        .appendix-media-row .media-box img {
+            height: 350px; /* Adjust this to make them larger or smaller vertically */
+            width: auto;
+            object-fit: contain;  
+            border-radius: 4px;
+        }
 
-/* Mobile responsive fallback */
-@media (max-width: 768px) {
-    .appendix-media-row {
-        flex-direction: column; 
-        align-items: center;
-    }
-    
-    .appendix-media-row .media-box img {
-        width: 100%;
-        height: auto; 
-    }
-}
+        /* Mobile responsive fallback */
+        @media (max-width: 768px) {
+            .appendix-media-row {
+                flex-direction: column; 
+                align-items: center;
+            }
+            
+            .appendix-media-row .media-box img {
+                width: 100%;
+                height: auto; 
+            }
+        }
 
-.center-figure {
-    display: block;
-    margin: 30px auto;
-    text-align: center;
-}
+        .center-figure {
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+        }
 
-.video-container {
+        .video-container {
             position: relative;
             display: inline-block;
+            max-width: 100%; /* Keeps container from breaking layout scale bounds */
+        }
+
+        /* ADDED: Forces the inner video track element to scale fluidly */
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
         }
 
         .video-hint {
@@ -171,13 +180,19 @@
         .video-container:hover video::-webkit-media-controls {
             opacity: 1;
         }
-.center-figure figcaption {
-    font-weight: normal;
-    color: #2e7d32; /* Matches your template's annotation green */
-    font-size: 0.85em;
-    margin-top: 8px;
-    text-align: center;
-}
+
+        .center-figure figcaption {
+            font-weight: normal;
+            color: #2e7d32; 
+            font-size: 0.85em;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Added inline typography helper class matching your setup */
+        .translation-annotation {
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -188,32 +203,35 @@
 
     <main>
       
-    <!-- Centered Graphic and Caption -->
-            <figure class="center-figure">
-                <img src="graphics/ss_steuben.jpg" alt="">
-                <figcaption></figcaption>
+        <!-- Centered Graphic and Caption -->
+        <figure class="center-figure">
+            <img src="graphics/ss_steuben.jpg" alt="SS General von Steuben passenger ship layout view">
+            <figcaption>The historical vessel silhouette profiles.</figcaption>
+        </figure>
+
+        <div class="translation-annotation">
+            <p>The General von Steuben - formerly called München, but renamed in 1938 - was a German passenger ship, which from 1944 was used as a troop carrier and hospital ship. On 10 February 1945, four months after Dad's voyage to Danzig, the Steuben was to be sunk by a Russian submarine whilst en route to Swinemünde (<a href="https://maps.app.goo.gl/coAB5BbvAEggDCZ76" target="_blank">Świnoujście</a>), with the loss of more than 4,500 refugees and wounded soldiers.</p>
+
+            <p>In the winter of 1945, East Prussian refugees headed west, away from the city of Königsberg, one step ahead of the advancing Soviet Army which attacked them from the air. Thousands fled to the Baltic Sea port at <a href="https://maps.app.goo.gl/szjKHrGQsLnuefGn8" target="_blank">Pillau</a> hoping to board ships that would carry them to safer regions in western Germany. The Wilhelm Gustloff was one such vessel as was the <a href="https://en.wikipedia.org/wiki/SS_General_von_Steuben" target="_blank">Steuben</a>, a luxury liner drafted into service for the Third Reich. On February 9, 1945, loaded with as many as 5,200 refugees and wounded German soldiers, the Steuben began her final voyage as part of <a href="https://en.wikipedia.org/wiki/Operation_Hannibal" target="_blank">Operation Hannibal</a>.</p>
+        </div>
+
+        <!-- Side-by-Side Refugee Archive Media Row -->
+        <div class="appendix-media-row">
+            <figure class="media-box">
+                <img src="graphics/refugees1.jpg" alt="Refugees fleeing archive photo variant 1">
             </figure>
 
-            <p>
-<span class="translation-annotation">
-    <p>The General von Steuben - formerly called München, but renamed in 1938 - was a German passenger ship, which from 1944 was used as a troop carrier and hospital ship. On 10 February 1945, four months after Dad's voyage to Danzig, the Steuben was to be sunk by a Russian submarine whilst en route to Swinemünde (<a href="https://maps.app.goo.gl/coAB5BbvAEggDCZ76" target="_blank">Świnoujście</a>), with the loss of more than 4,500 refugees and wounded soldiers.</p>
+            <figure class="media-box">
+                <img src="graphics/refugees2.jpg" alt="Refugees fleeing archive photo variant 2">
+            </figure>
+        </div>
 
-    <p>In the winter of 1945, East Prussian refugees headed west, away from the city of Königsberg, one step ahead of the advancing Soviet Army which attacked them from the air. Thousands fled to the Baltic Sea port at <a href="https://maps.app.goo.gl/szjKHrGQsLnuefGn8" target="_blank">Pillau</a> hoping to board ships that would carry them to safer regions in western Germany. The Wilhelm Gustloff was one such vessel as was the <a href="https://en.wikipedia.org/wiki/SS_General_von_Steuben" target="_blank>">Steuben</a>, a luxury liner drafted into service for the Third Reich. On February 9, 1945, loaded with as many as 5,200 refugees and wounded German soldiers, the Steuben began her final voyage as part of <a href="https://en.wikipedia.org/wiki/Operation_Hannibal" target="_blank">Operation Hannibal</a>.</span></p>
+        <div class="translation-annotation">
+            <p>Heading west the Steuben was sighted by Soviet Capt. Alexander Marinesko who had already sunk the Wilhelm Gustloff with the loss of 10,000 lives. Marinesko sighted a glow from the smokestacks of Steuben's coal-fired escorts, running at full power to stay with the faster ship. Four and a half hours later, he fired two torpedoes; the Steuben went down in 20 minutes. A frantic rescue saved 659 lives but more than 4,500 of its passengers perished - three times the death toll of Titanic and the third worst maritime disaster in history with the Wilhelm Gustloff and the Goya.</p>
+        </div>
 
-<!-- Side-by-Side Refugee Archive Media Row -->
-<div class="appendix-media-row">
-    <figure class="media-box">
-        <img src="graphics/refugees1.jpg" alt="Refugees variant 1">
-    </figure>
-
-    <figure class="media-box">
-        <img src="graphics/refugees2.jpg" alt="Refugees variant 2">
-    </figure>
-</div>
-<p>
-<span class="translation-annotation">Heading west the Steuben was sighted by Soviet Capt. Alexander Marinesko who had already sunk the Wilhelm Gustloff with the loss of 10,000 lives. Marinesko sighted a glow from the smokestacks of Steuben's coal-fired escorts, running at full power to stay with the faster ship. Four and a half hours later, he fired two torpedoes; the Steuben went down in 20 minutes. A frantic rescue saved 659 lives but more than 4,500 of its passengers perished - three times the death toll of Titanic and the third worst maritime disaster in history with the Wilhelm Gustloff and the Goya.</span></p>
-
-<figure class="center-figure">
+        <!-- Centered Video Block -->
+        <figure class="center-figure">
             <div class="video-container">
                 <video controls>
                     <source src="video/Steuben_sinking.mp4" type="video/mp4">
@@ -222,24 +240,13 @@
                 <div class="video-hint">Hover for video</div>
             </div>
             <figcaption><a href="https://www.youtube.com/embed/elUbkMUHEQE?si=yKTAZTwjR_RMMuCD" target="_blank">Watch on YouTube</a></figcaption>
-
-
-<!--Centered YouTube Video Section 
-        <figure class="center-figure">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/elUbkMUHEQE?si=yKTAZTwjR_RMMuCD" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen></iframe>
-            </div>
-            <figcaption>Historical footage regarding the General von Steuben.</figcaption>
         </figure>
--->
-
 
     </main>
-
+<!--
+    <footer class="back-link">
+        <p><a href="javascript:history.back()">← Return to Previous Chapter</a></p>
+    </footer>
+-->
 </body>
 </html>
