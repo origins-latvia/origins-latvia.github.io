@@ -141,24 +141,36 @@
     text-align: center;
 }
 
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 560px; /* Restricts the video from becoming too large on desktops */
-    margin: 0 auto;
-}
+.video-container {
+            position: relative;
+            display: inline-block;
+        }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-}
+        .video-hint {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(2, 48, 71, 0.7); 
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            pointer-events: none; 
+            transition: opacity 0.3s ease;
+        }
 
+        .video-container:hover .video-hint {
+            opacity: 0;
+        }
+
+        video::-webkit-media-controls {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .video-container:hover video::-webkit-media-controls {
+            opacity: 1;
+        }
 .center-figure figcaption {
     font-weight: normal;
     color: #2e7d32; /* Matches your template's annotation green */
@@ -198,7 +210,18 @@
 <p>
 <span class="translation-annotation">Heading west the Steuben was sighted by Soviet Capt. Alexander Marinesko who had already sunk the Wilhelm Gustloff with the loss of 10,000 lives. Marinesko sighted a glow from the smokestacks of Steuben's coal-fired escorts, running at full power to stay with the faster ship. Four and a half hours later, he fired two torpedoes; the Steuben went down in 20 minutes. A frantic rescue saved 659 lives but more than 4,500 of its passengers perished - three times the death toll of Titanic and the third worst maritime disaster in history with the Wilhelm Gustloff and the Goya.</span></p>
 
-<!-- Centered YouTube Video Section -->
+<figure class="center-figure">
+            <div class="video-container">
+                <video controls>
+                    <source src="video/Steuben_sinking.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-hint">Hover for video</div>
+            </div>
+            <figcaption><a href="https://www.youtube.com/embed/elUbkMUHEQE?si=yKTAZTwjR_RMMuCD" target="_blank">Watch on YouTube</a></figcaption>
+
+
+<!--Centered YouTube Video Section 
         <figure class="center-figure">
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/elUbkMUHEQE?si=yKTAZTwjR_RMMuCD" 
@@ -210,7 +233,7 @@
             </div>
             <figcaption>Historical footage regarding the General von Steuben.</figcaption>
         </figure>
-
+-->
 
 
     </main>
