@@ -125,6 +125,65 @@
         }
     }
 
+
+/* Horizontal Diary Grid Variant (Chapter 4) */
+    .diary-horizontal-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two perfectly equal 50/50 columns */
+        gap: 30px;
+        margin: 40px 0;
+        border: 1px solid #e0d9c5;
+        padding: 25px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        align-items: start;
+    }
+
+    /* Top Row: Spans across both columns */
+
+ /* Horizontal Diary Grid Variant (Chapter 4) */
+    .diary-horizontal-container .diary-scan-box {
+        grid-column: 1 / 3; 
+        width: 35%;
+        margin-left: auto;   /* Automatically balances the left space */
+        margin-right: auto;  /* Automatically balances the right space */
+        margin-bottom: 10px;
+    }
+
+    /* Bottom Left: Takes column 1 */
+    .diary-horizontal-container .diary-latvian {
+        grid-column: 1 / 2;
+    }
+
+    /* Bottom Right: Takes column 2 (Overrides old top-border and margin settings) */
+    .diary-horizontal-container .diary-english {
+        grid-column: 2 / 3;
+        border-top: none; 
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    /* Responsive Mobile adjustment */
+    @media (max-width: 600px) {
+        .diary-horizontal-container {
+            grid-template-columns: 1fr; /* Drop to single column stack on phones */
+        }
+        .diary-horizontal-container .diary-scan-box,
+        .diary-horizontal-container .diary-latvian,
+        .diary-horizontal-container .diary-english {
+            grid-column: 1 / 2;
+        }
+        .diary-horizontal-container .diary-english {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+    }
+
+
+
+
+
     .footnote-link {
         text-decoration: none;
         color: #1c39bb; 
@@ -378,23 +437,48 @@
 
     </section>
 
-<!-- BEGIN DIARY BLOCK-->
+<!-- BEGIN HORIZONTAL DIARY BLOCK -->
+<section class="diary-horizontal-container">
 
-    <section class="diary-container">
-
-
-        
-        <!-- Top Left: Scan -->
-        <div class="diary-scan-box">
+    <!-- Row 1: Horizontal Scan (Spans full width) -->
+    <div class="diary-scan-box">
         <a href="diary/d.48.1.jpg" target="_blank" class="expand-icon">View full size</a>
-        <img src="diary/d.48.1.jpg" alt="Diary Page Scan">
+        <img src="diary/d.48.1.jpg" alt="Horizontal Diary Page Scan">
+    </div>
+
+    <!-- Row 2, Column 1: Latvian Text -->
+    <div class="diary-latvian">
+             <p>29. sept. 	Atstāju Dinkelsbühl pulkst. 6. vakarā un iebraucu Ansbachā.</p>
+
+             <p>30. sept.	Šorīt pulkst. 7. atstāju Ansbachu un 11. Ambergā. Pulkst. 6. atstājām Ambergu.</p>
+
+             <p>1. okt.		7.p. ieradamies Augsburgā un 11p. novietojamies nomet.</p>
+    </div>
+
+    <!-- Row 2, Column 2: English Translation -->
+    <div class="diary-english">
+          <p>29 Sept -- Left <a href="https://www.google.com/maps/place/91550+Dinkelsb%C3%BChl,+Germany/@49.09774,9.9498771,107970m/data=!3m1!1e3!4m6!3m5!1s0x4798e8022725ad09:0x5eac66f7b3ee9fc1!8m2!3d49.0670187!4d10.3259395!16zL20vMDdwOG5i?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Dinkelsbühl</a> at 6:00 in the evening and arrived in <a href="https://www.google.com/maps/place/91522+Ansbach,+Germany/@49.3963312,10.4590575,147465m/data=!3m1!1e3!4m6!3m5!1s0x4798b97d4a683919:0x41eda32beb5c7c0!8m2!3d49.3004246!4d10.5719357!16zL20vMDE0bnM?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ansbach</a>.</p>
+
+             <p>30Sept -- Left Ansbach at 7:00am and arrived in Amberg at 11:00. Departed from <a href="https://www.google.com.au/maps/place/92224+Amberg,+Germany/@49.3565027,10.8519061,135315m/data=!3m1!1e3!4m6!3m5!1s0x47a02a3168aa822d:0x4f75681e64c15926!8m2!3d49.4403198!4d11.8633445!16zL20vMDFiNnBm?entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Amberg</a> at 6pm.</p>
+
+             <p>01 Oct -- We arrived in <a href="https://www.google.com.au/maps/place/Augsburg,+Germany/@48.9617309,10.3924756,198698m/data=!3m1!1e3!4m6!3m5!1s0x479ea2c53a212b29:0x41e48add78be7a0!8m2!3d48.3705449!4d10.89779!16zL20vMDlmOHE?entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Augsburg</a> at 7am and moved into a camp at 11:00.</p>
         </div>
+    </div>
 
+</section>
+<!-- END HORIZONTAL DIARY BLOCK -->
 
+<!-- BEGIN HORIZONTAL DIARY BLOCK -->
+<section class="diary-horizontal-container">
 
+    <!-- Row 1: Horizontal Scan (Spans full width) -->
+    <div class="diary-scan-box">
+        <a href="diary/d.48.1.jpg" target="_blank" class="expand-icon">View full size</a>
+        <img src="diary/d.48.1.jpg" alt="Horizontal Diary Page Scan">
+    </div>
 
-        <!-- Top Right: Latvian -->
-        <div class="diary-latvian">
+    <!-- Row 2, Column 1: Latvian Text -->
+    <div class="diary-latvian">
 
              <p>29. sept. 	Atstāju Dinkelsbühl pulkst. 6. vakarā un iebraucu Ansbachā.</p>
 
@@ -403,11 +487,8 @@
              <p>1. okt.		7.p. ieradamies Augsburgā un 11p. novietojamies nomet.</p>
         </div>
 
-
-
-
-        <!-- Bottom: English -->
-        <div class="diary-english">
+    <!-- Row 2, Column 2: English Translation -->
+    <div class="diary-english">
 
              <p>29 Sept -- Left <a href="https://www.google.com/maps/place/91550+Dinkelsb%C3%BChl,+Germany/@49.09774,9.9498771,107970m/data=!3m1!1e3!4m6!3m5!1s0x4798e8022725ad09:0x5eac66f7b3ee9fc1!8m2!3d49.0670187!4d10.3259395!16zL20vMDdwOG5i?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Dinkelsbühl</a> at 6:00 in the evening and arrived in <a href="https://www.google.com/maps/place/91522+Ansbach,+Germany/@49.3963312,10.4590575,147465m/data=!3m1!1e3!4m6!3m5!1s0x4798b97d4a683919:0x41eda32beb5c7c0!8m2!3d49.3004246!4d10.5719357!16zL20vMDE0bnM?hl=en&entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ansbach</a>.</p>
 
@@ -416,11 +497,9 @@
              <p>01 Oct -- We arrived in <a href="https://www.google.com.au/maps/place/Augsburg,+Germany/@48.9617309,10.3924756,198698m/data=!3m1!1e3!4m6!3m5!1s0x479ea2c53a212b29:0x41e48add78be7a0!8m2!3d48.3705449!4d10.89779!16zL20vMDlmOHE?entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Augsburg</a> at 7am and moved into a camp at 11:00.</p>
         </div>
 
-    </section>
+</section>
+<!-- END HORIZONTAL DIARY BLOCK -->
 
-
-
-<!-- END DIARY BLOCK -->
 
 
                 <!-- Centered Graphic and Caption -->
@@ -430,59 +509,45 @@
             </figure>    
 
 
-<!-- BEGIN DIARY BLOCK-->
+<!-- BEGIN HORIZONTAL DIARY BLOCK -->
+<section class="diary-horizontal-container">
 
-    <section class="diary-container">
-
-
-        
-        <!-- Top Left: Scan -->
-        <div class="diary-scan-box">
+    <!-- Row 1: Horizontal Scan (Spans full width) -->
+    <div class="diary-scan-box">
         <a href="diary/d.48.2.jpg" target="_blank" class="expand-icon">View full size</a>
-        <img src="diary/d.48.2.jpg" alt="Diary Page Scan">
-        </div>
+        <img src="diary/d.48.2.jpg" alt="Horizontal Diary Page Scan">
+    </div>
 
-
-
-
-        <!-- Top Right: Latvian -->
-        <div class="diary-latvian">
+    <!-- Row 2, Column 1: Latvian Text -->
+    <div class="diary-latvian">
 
              <p>6. okt.		Helēna dabuja bēdu vēsti kad netiek kopa ar mums.</p>
         </div>
 
-
-
-
-        <!-- Bottom: English -->
-        <div class="diary-english">
+    <!-- Row 2, Column 2: English Translation -->
+    <div class="diary-english">
 
              <p>06 Oct -- Helēna got bad news that she won't be going with us.</p>
-
-             <p><span class="translation-annotation">It seems departure arrangements were dependent on availability of berths on ships coming to Australia. The Wooster Victory had some places for single males from camps in Germany, so Dad got to go and Mum had to wait for another ship which hopefully (from their point of view) would be going to the same destination in Australia.</span></p>
         </div>
 
-    </section>
-
-<!-- END DIARY BLOCK -->
-
-<!-- BEGIN DIARY BLOCK-->
-
-    <section class="diary-container">
+</section>
+<!-- END HORIZONTAL DIARY BLOCK -->     
+ 
+<blockquote><span class="translation-annotation">It seems departure arrangements were dependent on availability of berths on ships coming to Australia. The Wooster Victory had some places for single males from camps in Germany, so Dad got to go and Mum had to wait for another ship which hopefully (from their point of view) would be going to the same destination in Australia.</span></blockquote>
 
 
-        
-        <!-- Top Left: Scan -->
-        <div class="diary-scan-box">
+
+<!-- BEGIN HORIZONTAL DIARY BLOCK -->
+<section class="diary-horizontal-container">
+
+    <!-- Row 1: Horizontal Scan (Spans full width) -->
+    <div class="diary-scan-box">
         <a href="diary/d.48.3.jpg" target="_blank" class="expand-icon">View full size</a>
-        <img src="diary/d.48.3.jpg" alt="Diary Page Scan">
-        </div>
+        <img src="diary/d.48.3.jpg" alt="Horizontal Diary Page Scan">
+    </div>
 
-
-
-
-        <!-- Top Right: Latvian -->
-        <div class="diary-latvian">
+    <!-- Row 2, Column 1: Latvian Text -->
+    <div class="diary-latvian">
 
              <p>10. okt.	Ar draudziņu pavadiju svētdienu.</p>
 
@@ -500,10 +565,8 @@
 
         </div>
 
-
-
-
-        <!-- Bottom: English -->
+    <!-- Row 2, Column 2: English Translation -->
+    <div class="diary-english">
         <div class="diary-english">
 
              <p>10 Oct -- At 15:00 we left Augsburg and Helēna stayed there.</p>
@@ -521,8 +584,11 @@
              <p>16 Oct -- We arrived at the dock in Genoa at 5:30. Boarded the Wooster Victory at 12:00 which left European shores at <strong>15:40, 16 October, 1948</strong>.</p>
 
         </div>
+    </div>
 
-    </section>
+</section>
+<!-- END HORIZONTAL DIARY BLOCK -->
+
 
   <blockquote><span class="translation-annotation">From Series Note for NAA A11907 which contains an excellent description of the DP Group Resettlement (or ‘Mass Resettlement’) scheme: "‘Wooster Victory’ sailed on this second voyage from Genoa late in the afternoon of 16th October 1948 [N.B. Education Officer's Report pp 68-78 of NAA Archive related to the voyage] with a complement of 475 DPs from camps in Germany and Austria. Most of them (373 in total) had come from Austria and had been waiting in the embarkation camp at Grugliasco near Genoa. A second group of 102, mostly single males, arrived directly by train from camps in Germany (including Seedorf) to board the ship. Most of these were Baltic persons – 133 Latvians, 84 Lithuanians and 28 Estonians. There were also 154 Ukrainians, 28 Poles and 14 Czechs. Unusually there were also persons of Greek nationality (7 persons) and Italians (4 persons)."</span></blockquote>
 
