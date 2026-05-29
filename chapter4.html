@@ -6,9 +6,7 @@
     <title>4. Traveling There</title>
     <link rel="icon" type="image/png" href="graphics/auseklis.png">
 
-<!--START CSS RULES-->
-
-    <style>
+<style>
     html {
         scroll-behavior: smooth;
     }
@@ -116,17 +114,7 @@
         margin-top: 8px;
     }
 
-    @media (max-width: 600px) {
-        .diary-container {
-            grid-template-columns: 1fr;
-        }
-        .diary-scan-box, .diary-latvian, .diary-english {
-            grid-column: 1 / 2;
-        }
-    }
-
-
-/* Horizontal Diary Grid Variant (Chapter 4) */
+    /* Horizontal Diary Grid Variant (Chapter 4) */
     .diary-horizontal-container {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two perfectly equal 50/50 columns */
@@ -139,9 +127,6 @@
         align-items: start;
     }
 
-    /* Top Row: Spans across both columns */
-
- /* Horizontal Diary Grid Variant (Chapter 4) */
     .diary-horizontal-container .diary-scan-box {
         grid-column: 1 / 3; 
         width: 35%;
@@ -163,12 +148,24 @@
         margin-top: 0;
     }
 
-    /* Responsive Mobile adjustment */
+    /* Responsive Mobile Adjustment for All Diary Layouts */
     @media (max-width: 600px) {
-        .diary-horizontal-container {
-            grid-template-columns: 1fr; /* Drop to single column stack on phones */
+        /* Vertical Layout Rules */
+        .diary-container {
+            grid-template-columns: 1fr;
         }
-        .diary-horizontal-container .diary-scan-box,
+        .diary-scan-box, .diary-latvian, .diary-english {
+            grid-column: 1 / 2;
+        }
+
+        /* Horizontal Layout Rules */
+        .diary-horizontal-container {
+            grid-template-columns: 1fr; 
+        }
+        .diary-horizontal-container .diary-scan-box {
+            grid-column: 1 / 2;
+            width: 100%; /* Expands scan image from 35% to 100% on small smartphone screens */
+        }
         .diary-horizontal-container .diary-latvian,
         .diary-horizontal-container .diary-english {
             grid-column: 1 / 2;
@@ -179,10 +176,6 @@
             margin-top: 10px;
         }
     }
-
-
-
-
 
     .footnote-link {
         text-decoration: none;
@@ -255,152 +248,147 @@
         word-break: break-all;
     }
 
-    /* Added rule to handle the auseklis divider graphic cleanly */
+    /* Handles the auseklis divider graphic cleanly */
     .divider {
         max-width: 100%;
         height: auto;
     }
 
     /* Navigation System */
-.site-nav {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-    border-bottom: 1px solid #e0d9c5;
-    padding-bottom: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    .site-nav {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 20px auto;
+        border-bottom: 1px solid #e0d9c5;
+        padding-bottom: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-.nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
-.nav-list li {
-    display: inline;
-}
+    .nav-list li {
+        display: inline;
+    }
 
-.nav-list a {
-    text-decoration: none;
-    color: #5d4037;
-    font-weight: 600;
-    font-size: 0.95em;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
-}
+    .nav-list a {
+        text-decoration: none;
+        color: #5d4037;
+        font-weight: 600;
+        font-size: 0.95em;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+    }
 
-.nav-list a:hover {
-    background-color: #f4efdf;
-    color: #1c39bb;
-}
+    .nav-list a:hover {
+        background-color: #f4efdf;
+        color: #1c39bb;
+    }
 
-.nav-list .current-page {
-    background-color: #5d4037;
-    color: #fdfaf3;
-    pointer-events: none; /* Disables clicking the current page */
-}
+    .nav-list .current-page {
+        background-color: #5d4037;
+        color: #fdfaf3;
+        pointer-events: none; 
+    }
 
-/* Dropdown Menu for Appendices (Optional but helpful later) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+    /* Dropdown Menu for Appendices */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-    border: 1px solid #e0d9c5;
-    z-index: 100;
-    margin-top: 5px;
-}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        border: 1px solid #e0d9c5;
+        z-index: 100;
+        margin-top: 5px;
+    }
 
-.dropdown-content a {
-    color: #2d2d2d;
-    padding: 10px 12px;
-    display: block;
-    font-weight: normal;
-}
+    .dropdown-content a {
+        color: #2d2d2d;
+        padding: 10px 12px;
+        display: block;
+        font-weight: normal;
+    }
 
-.dropdown-content a:hover {
-    background-color: #f4efdf;
-}
+    .dropdown-content a:hover {
+        background-color: #f4efdf;
+    }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-/* Reusable Fixed-Height Dual Column Graphic Component */
-.graphic-row-dual {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;     
-    justify-content: center;
-    gap: 30px;
-    margin: 40px auto;
-    max-width: 900px;
-    width: 100%;
-}
-
-.graphic-figure {
-    flex: 1;                  /* Keeps columns strictly at 50/50 width */
-    margin: 0;
-    display: flex;
-    flex-direction: column;   
-}
-
-.graphic-img-wrap {
-    height: 300px;            /* ADJUST THIS: Changes the universal height of both images */
-    display: flex;
-    align-items: center;      /* Vertically centers a narrower image inside its frame */
-    justify-content: center;  
-    background-color: transparent; /* Optional: change to #ffffff if you want a white card back */
-}
-
-.graphic-figure img {
-    max-width: 100%;
-    max-height: 100%;         /* Forces the image to respect the wrap box limit */
-    width: auto;
-    height: auto;
-    object-fit: contain;      /* Keeps natural image proportions completely unwarped */
-    display: block;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.graphic-caption {
-    font-weight: normal;
-    color: #555;
-    font-size: 0.85em;        
-    text-align: center;
-    margin-top: 12px;
-    line-height: 1.4;
-}
-
-/* Responsive adjustment for small mobile screens */
-@media (max-width: 600px) {
+    /* Reusable Fixed-Height Dual Column Graphic Component */
     .graphic-row-dual {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;     
+        justify-content: center;
         gap: 30px;
+        margin: 40px auto;
+        max-width: 900px;
+        width: 100%;
     }
+
+    .graphic-figure {
+        flex: 1;                  
+        margin: 0;
+        display: flex;
+        flex-direction: column;   
+    }
+
     .graphic-img-wrap {
-        height: auto;         /* Relaxes the fixed height on mobile so things don't shrink too small */
+        height: 300px;            
+        display: flex;
+        align-items: center;      
+        justify-content: center;  
+        background-color: transparent; 
     }
-}
 
+    .graphic-figure img {
+        max-width: 100%;
+        max-height: 100%;         
+        width: auto;
+        height: auto;
+        object-fit: contain;      
+        display: block;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
 
+    .graphic-caption {
+        font-weight: normal;
+        color: #555;
+        font-size: 0.85em;        
+        text-align: center;
+        margin-top: 12px;
+        line-height: 1.4;
+    }
 
-</style>
-
-<!--END OF CSS STYLE RULES-->
+    /* Responsive adjustment for small mobile screens */
+    @media (max-width: 600px) {
+        .graphic-row-dual {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .graphic-img-wrap {
+            height: auto;         
+        }
+    }
+    </style>
 
 </head>
 
@@ -569,7 +557,7 @@
     <div class="diary-english">
         <div class="diary-english">
 
-             <p>10 Oct -- Spent Sunday with friend(s).</p>
+             <p>10 Oct -- Spent Sunday with a friend.</p>
 
              <p>11 Oct -- At 15:00 we left Augsburg and Helēna stayed there.</p>
 
@@ -623,6 +611,7 @@
                 <a href="#" class="dropbtn">Appendices ▾</a>
                 <div class="dropdown-content">
                     <a href="appendix_steuben.html" target="_blank" rel="noopener noreferrer">SS Steuben</a>
+                    <a href="appendix_wooster.html" target="_blank" rel="noopener noreferrer">Wooster Victory</a>
                     <!-- Future appendices can be stacked cleanly here with target="_blank" rel="noopener noreferrer" -->
                 </div>
             </li>
