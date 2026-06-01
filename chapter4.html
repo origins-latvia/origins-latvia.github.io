@@ -388,6 +388,39 @@
             height: auto;         
         }
     }
+
+.video-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .video-hint {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(2, 48, 71, 0.7); 
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            pointer-events: none; 
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover .video-hint {
+            opacity: 0;
+        }
+
+        video::-webkit-media-controls {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .video-container:hover video::-webkit-media-controls {
+            opacity: 1;
+        }
+
+
     </style>
 
 
@@ -654,7 +687,7 @@
     <!-- Row 2, Column 1: Latvian Text -->
     <div class="diary-latvian">
         <p>24. okt.	Pirmā karstākā diena, ēnā 32ºC. Braucam par Sarkano Jūru.</p>
-        <p>25. okt.	Otra karstāka diena ēnā 36º C.</p>
+        <p>25. okt.	Otra karstāka diena ēnā 36ºC.</p>
         <p>26. okt.	Nakti guļam uz klaja un šorīt 8:00 iebraucam Adenas ostā. 11, 12, 13 uzņēmumi. 14:30 atstajam Adenas ostu. Beidzamie krasti.</p>
         <p>27. okt	Šodien gluži nav tik karsts jo braucam par okianu. Vakarā sāka just ....</p>
         <p>28. okt.	Jūra ir diezan mierīga bet kuģis šūpojas diezgan stipri. Un man gara stāvoklis ir ļoti slikts un arī domas katru brīdi ir pie tevis un mācīties nevar neko.</p>
@@ -663,8 +696,8 @@
 
     <!-- Row 2, Column 2: English Translation -->
     <div class="diary-english">
-        <p>24 Oct -- The first really hot day - 32°c in the shade. Still in the Red Sea.</p>
-        <p>25 Oct -- Another hot day - 36°c in the shade.</p>
+        <p>24 Oct -- The first really hot day - 32°C in the shade. Still in the Red Sea.</p>
+        <p>25 Oct -- Another hot day - 36°C in the shade.</p>
         <p>26 Oct -- At night I slept on the deck. This morning at 8:00 we arrive in the port of Aden [photos 11,12, 13]. We pull out of Aden at 14:30. The last of the shoreline.</p>
         <p>27 Oct -- Today it's actually not so hot because we're on the ocean. In the evening I (it) start(s) to feel ....</p>
         <p>28 Oct -- The sea is reasonably calm but the ship is rolling really badly. My state of mind is very bad and my thoughts are with you every moment - I can't study at all.</p>
@@ -826,6 +859,18 @@
 </span>
 </blockquote>
 
+
+<figure class="center-figure">
+        <div class="video-container">
+            <video controls>
+                <source src="video/bonegilla.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-hint">Hover for video</div>
+        </div>
+        <figcaption><a href="https://alburyentertainmentcentre.com.au/whatson/bonegilla" target="_blank">Albury Entertainment Centre</a>. <cite>Bonegilla: Their Life in a Suitcase.</cite> 2025</figcaption>
+    </figure>
+
 <!-- START FIXED-HEIGHT SIDE-BY-SIDE GRAPHICS -->
 <div class="graphic-row-dual">
     
@@ -834,7 +879,7 @@
         <div class="graphic-img-wrap">
             <img src="graphics/t.48.m.jpg" alt="Description of the left image">
         </div>
-        <figcaption class="graphic-caption">Bonegilla, 23 Nov., 1948 - Reception card</figcaption>
+        <figcaption class="graphic-caption">Bonegilla, 23 Nov., 1948 - Reception card.<br>Note: #383 from Wooster Victory Nominal Roll</figcaption>
     </figure>
     
     <!-- Right Graphic Column -->
