@@ -14,7 +14,7 @@
     body { 
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
         line-height: 1.6; 
-        max-width: 900px; 
+        max-width: 800px; 
         margin: 40px auto; 
         padding: 20px; 
         color: #2d2d2d; 
@@ -370,19 +370,19 @@
        ========================================================================== */
 
     .header-menu-container {
-        position: relative;
-        width: 100%;
-        height: 38px; /* FIXED: Holds structural space so following elements do not overlap */
-        margin-bottom: 20px;
-    }
+    position: relative;
+    width: 100%;
+    height: 0; /* Prevents container from pushing layout content down */
+    margin-bottom: 20px;
+}
 
-    .hamburger-menu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 1000;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+.hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
     /* Hidden Checkbox Controller */
     #menu-toggle {
@@ -507,7 +507,7 @@
             </ul>
         </nav>
     </div>
-
+<h2> - Epilogue - </h2>
 <section id="Epilogue">
     <p>He always grieved that it would never be possible to go back to <strong>Skuķi</strong> and indeed just before the unimaginable happened and he could go back, he died. In 1991 the Soviet empire collapsed and Latvija was free again. It was possible to travel there without any restrictions and in 2008 I went there in his stead (for the first of two brief trips) .... In spirit he was back at Skuķi as Ādolfs, Gunta and Ārijs accompanied me to the farmhouse he had been forced to leave 65 years earlier.</p>
 
