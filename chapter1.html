@@ -278,7 +278,118 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+/* ==========================================================================
+   DISCREET HEADER HAMBURGER DROPDOWN MENU SYSTEM
+   ========================================================================== */
 
+.header-menu-container {
+    position: relative;
+    width: 100%;
+    height: 0; /* Prevents container from pushing layout content down */
+    margin-bottom: 20px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hidden Checkbox Controller */
+#menu-toggle {
+    display: none;
+}
+
+/* Discreet Hamburger Icon Button Style */
+.menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px 10px;
+    background-color: #f4efdf;
+    border: 1px solid #e0d9c5;
+    border-radius: 4px;
+    color: #5d4037;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+    user-select: none;
+}
+
+.menu-button:hover {
+    background-color: #e0d9c5;
+    color: #1c39bb;
+}
+
+.hamburger-icon {
+    font-size: 1.1em;
+    margin-right: 6px;
+}
+
+/* Dropdown Content List */
+.header-dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 210px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid #e0d9c5;
+    border-radius: 4px;
+    padding: 5px 0;
+    margin: 5px 0 0 0;
+    list-style: none;
+}
+
+.header-dropdown-list li a {
+    color: #2d2d2d;
+    padding: 10px 16px;
+    display: block;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: normal;
+    transition: background-color 0.2s;
+}
+
+.header-dropdown-list li a:hover {
+    background-color: #f4efdf;
+    color: #1c39bb;
+}
+
+/* Highlight current page in hamburger list */
+.header-dropdown-list li .current-page {
+    background-color: #f4efdf;
+    color: #5d4037;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* Headers inside the dropdown (e.g., "Appendices") */
+.header-dropdown-list .nested-header {
+    padding: 6px 16px 2px 16px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #7d6b5d;
+    font-weight: bold;
+    border-top: 1px dashed #e0d9c5;
+    margin-top: 5px;
+}
+
+/* Indented items under headers */
+.header-dropdown-list .nested-item a {
+    padding-left: 28px;
+    font-size: 0.85em;
+}
+
+/* Toggle mechanism using the state of the hidden checkbox */
+#menu-toggle:checked ~ .header-dropdown-list {
+    display: block;
+}
 </style>
 
 <!--END OF CSS STYLE RULES-->
@@ -291,7 +402,26 @@
              alt="Origins: There and Back Again" 
              style="width: 100%; height: auto; display: block; border-radius: 4px;">
     </header>
-
+<!-- Discreet Hamburger Pulldown Positioned Below Banner to the Right -->
+    <div class="header-menu-container">
+        <nav class="hamburger-menu" aria-label="Quick Navigation">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-button">
+                <span class="hamburger-icon">☰</span> Menu
+            </label>
+            <ul class="header-dropdown-list">
+                <li><a href="index.html">Preface</a></li>
+                <li><a href="chapter1.html" class="current-page">Ch. 1: Barbarossa: 1943</a></li>
+                <li><a href="chapter2.html">Ch. 2: Retreat: 1943-1945</a></li>
+                <li><a href="chapter3.html">Ch. 3: POW to DP: 1945-1947</a></li>
+                <li><a href="chapter4.html">Ch. 4: A New Life: 1948 -</a></li>
+                <li><a href="epilogue.html">Epilogue</a></li>
+                <li class="nested-header">Appendices</li>
+                <li class="nested-item"><a href="appendix_steuben.html" target="_blank" rel="noopener noreferrer">SS Steuben</a></li>
+                <li class="nested-item"><a href="appendix_wooster.html" target="_blank" rel="noopener noreferrer">Wooster Victory</a></li>
+            </ul>
+        </nav>
+    </div>
          
     <p style="text-align: center; margin: 40px 0; display: block; width: 100%;"><strong>As a result of forced conscription, Latvians fought on both sides of World War II.<br>
         They all lost.</strong></p>     
